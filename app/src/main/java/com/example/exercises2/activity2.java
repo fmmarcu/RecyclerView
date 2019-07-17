@@ -21,7 +21,7 @@ public class activity2 extends AppCompatActivity {
     }
 
     protected void initNames() {
-        contactss.add("radu");
+        contactss.add("raduc");
         contactss.add("dummy");
         contactss.add("andrei");
         contactss.add("stefan");
