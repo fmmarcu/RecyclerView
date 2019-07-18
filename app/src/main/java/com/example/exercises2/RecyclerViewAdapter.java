@@ -19,41 +19,40 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-    private ArrayList<String> contacts=new ArrayList<>();
-    private Context context;
+    private ArrayList<String> mcontacts=new ArrayList<>();
+    private Context mcontext;
 
     RecyclerViewAdapter(ArrayList<String> contacts, Context context) {
-        this.contacts=contacts;
-        this.context=context;
+        mcontacts=contacts;
+        mcontext=context;
     }
 
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, true);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         ViewHolder holder=new ViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        holder.textimg.setText(contacts.get(position));
+        holder.textimg.setText(mcontacts.get(position));
         holder.baseLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, contacts.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mcontext, mcontacts.get(position), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return contacts.size();
+        return mcontacts.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        CircleImageView image;
         TextView textimg;
         RelativeLayout baseLayout;
 

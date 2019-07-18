@@ -2,6 +2,7 @@ package com.example.exercises2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), activity2.class);
-                startActivityForResult(myIntent, 0);
+                startActivity(myIntent);
             }
 
         });
